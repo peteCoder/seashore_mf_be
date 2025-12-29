@@ -19,13 +19,24 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.shortcuts import redirect
+
 # Admin site customization
 admin.site.site_header = "Seashore Microfinance Admin"
 admin.site.site_title = "Seashore Admin Portal"
 admin.site.index_title = "Welcome to Seashore Microfinance Administration"
 
+
+# Home endpoint redirecting to admin
+def home_page(request):
+    return redirect("/admin")
+
+
 urlpatterns = [
-    # Admin
+    # Home endpoint
+    path("", home_page, name="home"),
+
+    # Admin endpoints
     path('admin/', admin.site.urls),
     
     # API endpoints
