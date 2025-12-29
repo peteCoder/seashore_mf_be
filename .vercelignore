@@ -1,0 +1,13 @@
+.venv
+venv
+.env
+.env.loc
+env
+venv
+**/**/venv
+venv/**/**/
+.env
+
+.DS_Store
+
+__pycache__
